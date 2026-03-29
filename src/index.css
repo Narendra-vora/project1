@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gir-green: #2c4c3b;
+  --color-gir-gold: #d4af37;
+  --color-gir-sand: #f4a460;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@utility text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fcfbf9;
+  color: #1f2937;
+}
+
+html {
+  scroll-behavior: smooth;
+}
