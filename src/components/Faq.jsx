@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Clock, Calendar, AlertCircle } from 'lucide-react';
 import Navbar from './Navbar';
 import sasan_gir_lion from '../assets/sasan_gir_lion.png';
+import Footer from './Footer';
 
 const faqs = [
     {
@@ -39,38 +40,38 @@ const Faq = () => {
             <Navbar />
 
             {/* Hero Banner with Lion Photo */}
-            <div className="relative h-[60vh] w-full mt-20">
+            <div className="relative h-[58vh] min-h-[320px] w-full sm:h-[70vh]">
                 <img
                     src={sasan_gir_lion}
                     alt="Majestic Asiatic Lion"
-                    className="w-full h-full object-cover"
+                    className="object-cover w-full h-full"
                 />
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         className="text-center"
                     >
-                        {/* <h1 className="text-5xl md:text-7xl font-black text-white mb-4 tracking-wider text-shadow">
+                        {/* <h1 className="mb-4 text-5xl font-black tracking-wider text-white md:text-7xl text-shadow">
                             FAQ & Info
                         </h1> */}
-                        <p className="text-xl text-white/90 font-medium">Everything you need to know before visiting</p>
+                        <p className="text-xl font-medium text-white/90">Everything you need to know before visiting</p>
                     </motion.div>
                 </div>
             </div>
 
             {/* FAQ Section */}
-            <section className="py-20 flex-grow">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="flex-grow py-14 sm:py-20">
+                <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
 
-                    <div className="text-center mb-16">
-                        <h2 className="text-gir-green font-bold tracking-wider uppercase text-sm mb-3">Questions & Answers</h2>
-                        <h3 className="text-4xl font-black text-gray-900">Frequently Asked Questions</h3>
-                        <div className="h-1 w-24 bg-gir-gold mx-auto mt-6 rounded-full"></div>
+                    <div className="mb-16 text-center">
+                        <h2 className="mb-3 text-sm font-bold tracking-wider uppercase text-gir-green">Questions & Answers</h2>
+                        <h3 className="text-3xl font-black text-gray-900 sm:text-4xl">Frequently Asked Questions</h3>
+                        <div className="w-24 h-1 mx-auto mt-6 rounded-full bg-gir-gold"></div>
                     </div>
 
-                    <div className="space-y-4 mb-20">
+                    <div className="mb-20 space-y-4">
                         {faqs.map((faq, index) => (
                             <motion.div
                                 key={index}
@@ -78,13 +79,13 @@ const Faq = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                                className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+                                className="overflow-hidden bg-white border border-gray-100 shadow-sm rounded-2xl"
                             >
                                 <button
                                     onClick={() => toggleFaq(index)}
-                                    className="w-full flex justify-between items-center p-6 text-left focus:outline-none hover:bg-gray-50 transition-colors"
+                                    className="flex items-center justify-between w-full p-4 text-left transition-colors sm:p-6 focus:outline-none hover:bg-gray-50"
                                 >
-                                    <span className="text-lg font-bold text-gray-800">{faq.question}</span>
+                                    <span className="pr-3 text-base font-bold text-gray-800 sm:text-lg">{faq.question}</span>
                                     <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-180 bg-gir-gold text-white' : 'bg-gray-100 text-gray-500'}`}>
                                         <ChevronDown className="w-5 h-5" />
                                     </div>
@@ -99,7 +100,7 @@ const Faq = () => {
                                             transition={{ duration: 0.3 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="p-6 pt-0 text-gray-600 leading-relaxed border-t border-gray-50">
+                                            <div className="p-4 pt-0 leading-relaxed text-gray-600 border-t sm:p-6 sm:pt-0 border-gray-50">
                                                 {faq.answer}
                                             </div>
                                         </motion.div>
@@ -114,42 +115,42 @@ const Faq = () => {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="bg-gradient-to-br from-gir-green to-[#1e3629] rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden"
+                        className="bg-gradient-to-br from-gir-green to-[#1e3629] rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl relative overflow-hidden"
                     >
                         {/* Background design */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+                        <div className="absolute top-0 right-0 w-64 h-64 translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl"></div>
 
-                        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div className="relative z-10 flex flex-col items-center justify-between gap-8 md:flex-row">
                             <div className="flex-1">
-                                <h3 className="text-3xl font-black mb-4 flex items-center gap-3">
+                                <h3 className="flex items-center gap-3 mb-4 text-2xl font-black sm:text-3xl">
                                     <Clock className="w-8 h-8 text-gir-gold" />
                                     Park Timings & Schedule
                                 </h3>
-                                <p className="text-white/80 text-lg mb-6">Plan your safari according to our official operating hours.</p>
+                                <p className="mb-6 text-lg text-white/80">Plan your safari according to our official operating hours.</p>
 
-                                <div className="bg-black/20 rounded-2xl p-6 backdrop-blur-sm border border-white/10">
+                                <div className="p-6 border bg-black/20 rounded-2xl backdrop-blur-sm border-white/10">
                                     <div className="flex items-start gap-4 mb-4">
-                                        <Calendar className="w-6 h-6 text-gir-gold flex-shrink-0 mt-1" />
+                                        <Calendar className="flex-shrink-0 w-6 h-6 mt-1 text-gir-gold" />
                                         <div>
-                                            <h4 className="font-bold text-xl mb-1 text-gir-gold">Open Days</h4>
+                                            <h4 className="mb-1 text-xl font-bold text-gir-gold">Open Days</h4>
                                             <p className="text-lg font-medium text-white">Tuesday to Sunday</p>
-                                            <p className="text-sm text-red-300 mt-1 flex items-center gap-1">
+                                            <p className="flex items-center gap-1 mt-1 text-sm text-red-300">
                                                 <AlertCircle className="w-4 h-4" />
                                                 Park remains completely CLOSED on Mondays.
                                             </p>
                                         </div>
                                     </div>
 
-                                    <div className="h-px w-full bg-white/10 my-4"></div>
+                                    <div className="w-full h-px my-4 bg-white/10"></div>
 
-                                    <div className="flex flex-col sm:flex-row gap-6">
+                                    <div className="flex flex-col gap-6 sm:flex-row">
                                         <div className="flex-1">
-                                            <h4 className="font-bold text-white/70 uppercase text-sm tracking-wider mb-2">Morning Safari</h4>
+                                            <h4 className="mb-2 text-sm font-bold tracking-wider uppercase text-white/70">Morning Safari</h4>
                                             <p className="text-xl font-bold">06:00 AM - 11:00 AM</p>
                                         </div>
-                                        <div className="w-px bg-white/10 hidden sm:block"></div>
+                                        <div className="hidden w-px bg-white/10 sm:block"></div>
                                         <div className="flex-1">
-                                            <h4 className="font-bold text-white/70 uppercase text-sm tracking-wider mb-2">Evening Safari</h4>
+                                            <h4 className="mb-2 text-sm font-bold tracking-wider uppercase text-white/70">Evening Safari</h4>
                                             <p className="text-xl font-bold">03:00 PM - 06:00 PM</p>
                                         </div>
                                     </div>
@@ -162,13 +163,14 @@ const Faq = () => {
             </section>
 
             {/* Footer */}
-            <footer className="bg-[#111] text-center py-10 mt-auto">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* <footer className="bg-[#111] text-center py-10 mt-auto">
+                <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <p className="text-white/70">
                         &copy; {new Date().getFullYear()} Sasan Gir National Park Explorer. All rights reserved.
                     </p>
                 </div>
-            </footer>
+            </footer> */}
+            <Footer />    
         </div>
     );
 };

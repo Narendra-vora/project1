@@ -11,7 +11,7 @@ const slides = [
   {
     id: 1,
     type: 'video',
-    videoSrc: '/lion_running.mp4', // <--- Yahan video ka path hai (public folder se)
+    videoSrc: 'lion_running.mp4', // <--- Yahan video ka path hai (public folder se)
     image: sasan_gir_lion, // video load hone tak ye image dikhegi (poster)
     // title: 'The Royal Roar',
     // subtitle: 'Witness the majesty of the Asiatic Lion in its only natural habitat.',
@@ -23,13 +23,13 @@ const slides = [
   //   // title: 'A Golden Ecosystem',
   //   subtitle: 'Explore the breathtaking dry deciduous forests and rocky hills.',
   // },
-  {
-    id: 3,
-    type: 'image',
-    image: sasan_gir_safari,
-    // title: 'The Wild Safari',
-    subtitle: 'Embark on an unforgettable journey through the heart of the jungle.',
-  }
+  // {
+  //   id: 3,
+  //   type: 'image',
+  //   image: sasan_gir_safari,
+  //   // title: 'The Wild Safari',
+  //   subtitle: 'Embark on an unforgettable journey through the heart of the jungle.',
+  // }
 ];
 
 const HeroSlider = () => {
@@ -51,7 +51,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
+    <div className="relative w-full min-h-[560px] h-[100svh] overflow-hidden bg-black">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentSlide}
@@ -70,13 +70,13 @@ const HeroSlider = () => {
               muted
               playsInline
               poster={slides[currentSlide].image}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 object-cover w-full h-full"
             />
           ) : (
             <img
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 object-cover w-full h-full"
             />
           )}
           {/* Dark Overlay for Text Readability */}
@@ -84,7 +84,7 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 max-w-5xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full max-w-5xl px-4 mx-auto text-center">
         <AnimatePresence mode='wait'>
           <motion.div
             key={currentSlide}
@@ -93,13 +93,13 @@ const HeroSlider = () => {
             exit={{ y: -30, opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight text-shadow">
+            <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-7xl text-shadow">
               {slides[currentSlide].title}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 font-medium mb-10 max-w-3xl mx-auto text-shadow">
+            <p className="max-w-3xl mx-auto mb-8 text-base font-medium text-gray-200 sm:text-xl md:text-2xl text-shadow">
               {slides[currentSlide].subtitle}
             </p>
-            {/* <button className="bg-gir-gold hover:bg-yellow-500 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 mx-auto">
+            {/* <button className="flex items-center gap-2 px-10 py-4 mx-auto font-bold text-white transition-all duration-300 transform rounded-full shadow-lg bg-gir-gold hover:bg-yellow-500 hover:scale-105">
               Book Your Safari */}
             {/* <ChevronRight className="w-5 h-5" />
           </button> */}
@@ -110,19 +110,19 @@ const HeroSlider = () => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/30 backdrop-blur-md p-3 rounded-full text-white transition-all"
+        className="absolute z-20 hidden p-3 text-white transition-all -translate-y-1/2 rounded-full left-4 top-1/2 bg-white/10 hover:bg-white/30 backdrop-blur-md sm:block"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/30 backdrop-blur-md p-3 rounded-full text-white transition-all"
+        className="absolute z-20 hidden p-3 text-white transition-all -translate-y-1/2 rounded-full right-4 top-1/2 bg-white/10 hover:bg-white/30 backdrop-blur-md sm:block"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
 
       {/* Slide Indicators */}
-      {/* <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+      {/* <div className="absolute z-20 flex space-x-3 -translate-x-1/2 bottom-10 left-1/2">
         {slides.map((_, index) => (
           <button
             key={index}

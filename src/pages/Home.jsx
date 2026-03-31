@@ -3,6 +3,8 @@ import Navbar from '../components/Navbar';
 import HeroSlider from '../components/HeroSlider';
 import AboutSection from '../components/AboutSection';
 import Services from '../components/Services';
+import OurAnimals from '../components/OurAnimals';
+import Footer from '../components/Footer';
 
 const Home = () => {
   return (
@@ -11,20 +13,8 @@ const Home = () => {
       <HeroSlider />
       <AboutSection />
       <Services />
-      
-      {/* Footer Placeholder */}
-      <footer className="bg-gir-green text-center py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-white">
-            &copy; {new Date().getFullYear()} Sasan Gir National Park Explorer. All rights reserved.
-          </p>
-          <div className="mt-4 flex justify-center space-x-6 text-white/70">
-            <a href="#" className="hover:text-gir-gold transition-colors">Privacy</a>
-            <a href="#" className="hover:text-gir-gold transition-colors">Terms</a>
-            <a href="#" className="hover:text-gir-gold transition-colors">Safari Info</a>
-          </div>
-        </div>
-      </footer>
+      <OurAnimals />
+      <Footer />
     </div>
   );
 };

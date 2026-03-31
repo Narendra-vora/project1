@@ -16,32 +16,39 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed w-full h-20 z-50 transition-all duration-300 bg-transparent py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+    <nav className={`fixed z-50 w-full h-20 py-4 transition-all duration-300 ${isScrolled ? 'bg-black/45 backdrop-blur-md' : 'bg-transparent'}`}>
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center gap-2 font-black text-2xl tracking-wider text-white hover:text-gir-gold transition-colors duration-300">
-              <MapPin className="h-7 w-7 text-gir-gold" />
-              <span className="text-bold">SASAN GIR</span>
+            <Link to="/" className="flex items-center gap-2 text-lg font-black tracking-wide text-white transition-colors duration-300 sm:text-xl lg:text-2xl hover:text-gir-gold">
+              <MapPin className="w-6 h-6 text-gir-gold sm:h-7 sm:w-7" />
+              <span className="truncate max-w-44 sm:max-w-none">Nature & Adventure Vibe</span>
               {/* <h1 className='text-gir-green'>hanafen  </h1> */}
             </Link>
           </div>
 
-          <div className="md:ml-6 md:flex md:space-x-14">
+          <div className="hidden md:ml-6 md:flex md:items-center md:space-x-6 lg:space-x-10">
             <Link to="/" className="font-semibold transition-all duration-300 text-white hover:text-green-500  hover:-translate-y-0.5">Home</Link>
-            <a href="#about" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">About Gir</a>
+            <a href="#about" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">About </a>
             <a href="#services" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Services</a>
+            <Link to="/book-parks" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Book Parks</Link>
             <Link to="/faq" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">FAQ</Link>
-            <Link to="/safari" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Book Safari</Link>
             <Link to="/contact" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Contact Us</Link>
+            <Link
+              to="/safari"
+              className="inline-flex items-center justify-center rounded-xl bg-gir-gold px-5 py-2.5 font-semibold text-white  duration-300 hover:-translate-y-0.5 hover:opacity-90"
+            >
+              Book Now
+            </Link>
           </div>
 
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gir-green hover:text-gir-gold focus:outline-none p-1 rounded-md transition-colors"
+              className="p-1 text-white transition-colors rounded-md hover:text-gir-gold focus:outline-none"
+              aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -49,13 +56,21 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md absolute w-full pb-4 shadow-xl">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
-            <Link to="/" className="text-gray-800 hover:text-gir-gold block px-3 py-2 rounded-md font-medium text-lg">Home</Link>
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-800 hover:text-gir-gold block px-3 py-2 rounded-md font-medium text-lg">About</a>
-            <Link to="/safari" className="text-gray-800 hover:text-gir-gold block px-3 py-2 rounded-md font-medium text-lg">Safari</Link>
-            <Link to="/contact" className="text-gray-800 hover:text-gir-gold block px-3 py-2 rounded-md font-medium text-lg">Contact</Link>
-            <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-800 hover:text-gir-gold block px-3 py-2 rounded-md font-medium text-lg">Services</a>
+        <div className="absolute w-full pb-4 shadow-xl md:hidden bg-white/95 backdrop-blur-md">
+          <div className="flex flex-col items-center px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Home</Link>
+            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">About</a>
+            <Link to="/book-parks" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Book Parks</Link>
+            <Link to="/faq" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">FAQ</Link>
+            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Contact</Link>
+            <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Services</a>
+            <Link
+              to="/safari"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-2 inline-flex items-center justify-center rounded-xl bg-gir-gold px-6 py-2.5 font-bold text-black transition-all duration-300 hover:opacity-90"
+            >
+              Book Now
+            </Link>
           </div>
         </div>
       )}
