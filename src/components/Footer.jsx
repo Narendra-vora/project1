@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="text-2xl font-bold tracking-wide">Sasan Gir</h3>
+            <h3 className="text-2xl font-bold tracking-wide">Nature & Adventure Vibe</h3>
             <p className="mt-3 text-sm leading-relaxed text-white/80">
               Explore the wild heart of Gujarat with curated safari experiences, local guides, and unforgettable wildlife moments.
             </p>
@@ -30,9 +30,9 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-gir-gold">Contact</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/85">
-              <li>Gir Interpretation Zone, Sasan</li>
+              <li>national parks </li>
               <li>+91 98765 43210</li>
-              <li>hello@sasangirexplorer.com</li>
+              <li>natureandadventurevibe@gmail.com</li>
               <li>Mon - Sun: 6:00 AM - 7:00 PM</li>
             </ul>
           </div>
@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 pt-6 mt-10 text-xs border-t border-white/15 sm:flex-row text-white/70">
-          <p>Copyright {new Date().getFullYear()} Sasan Gir National Park Explorer. All rights reserved.</p>
+          <p>Copyright {new Date().getFullYear()} Nature & Adventure Vibe. All rights reserved.</p>
           <div className="flex items-center gap-5">
             {/* <a href="#" className="transition-colors hover:text-gir-gold">Privacy Policy</a>
             <a href="#" className="transition-colors hover:text-gir-gold">Terms of Service</a>

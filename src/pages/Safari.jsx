@@ -152,7 +152,7 @@ const Safari = () => {
 
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(18);
-    doc.text('Hanafen Safari Ticket', 20, 20);
+    doc.text('Nature & adventure Safari Ticket', 20, 20);
 
     doc.setDrawColor(181, 147, 74);
     doc.line(20, 24, 190, 24);

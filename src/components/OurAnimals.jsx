@@ -3,11 +3,11 @@ import React from 'react';
 const animals = [
   {
     name: 'Asiatic Lion',
-    image: 'https://loremflickr.com/640/420/asiatic-lion?lock=1',
+    image: 'https://1.bp.blogspot.com/-m4noy4xoX_4/X27XzJ7vrGI/AAAAAAAAFhI/uiWCO-hco8s2I8GFsOkPzFdleiu74EBDgCLcBGAsYHQ/s760/gir_lion.jpg',
   },
   {
     name: 'Indian Leopard',
-    image: 'https://loremflickr.com/640/420/indian-leopard?lock=2',
+    image: 'https://tse1.mm.bing.net/th/id/OIP.ZpxqXl1dJCKpNNgn78UnMAHaEs?pid=Api&P=0&h=180',
   },
   {
     name: 'Striped Hyena',
@@ -31,11 +31,11 @@ const animals = [
   },
   {
     name: 'Mugger Crocodile',
-    image: 'https://loremflickr.com/640/420/mugger-crocodile?lock=8',
+    image: 'https://www.reptilefact.com/wp-content/uploads/2016/10/Mugger-Crocodile-Images.jpg  ',
   },
   {
     name: 'Indian Peafowl',
-    image: 'https://loremflickr.com/640/420/indian-peafowl?lock=9',
+    image: 'https://www.naturephoto-cz.com/fullsize/birds/indian-peafowl-162291.jpg',
   },
   {
     name: 'Hanuman Langur',
@@ -51,7 +51,7 @@ const OurAnimals = () => {
           <p className="text-gir-green/80 tracking-[0.25em] text-xs sm:text-sm uppercase">Our Animals</p>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl text-gir-green">Nature & Adventure vibe</h2>
           <p className="max-w-2xl mx-auto mt-3 text-gir-green/80">
-            Discover the incredible animals you may spot during your Sasan Gir safari.
+            Discover the incredible animals you may spot during your safari.
           </p>
         </div>
 
