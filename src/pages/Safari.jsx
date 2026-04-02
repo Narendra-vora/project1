@@ -208,7 +208,7 @@ const Safari = () => {
       </header>
 
       <main className="pt-10 pb-16 sm:pt-12 sm:pb-20">
-        <p className="text-center text-gir-gold uppercase tracking-[0.2em] text-sm sm:text-base font-extrabold mb-8 sm:mb-10 hover:underline transition-all duration-200 cursor-pointer">
+        <p className="text-center  uppercase tracking-[0.2em] text-sm sm:text-base font-extrabold mb-8 sm:mb-10 hover:underline transition-all duration-200 cursor-pointer  bg-gir-green hover:bg-gir-green/90">
           Book Safari
         </p>
 

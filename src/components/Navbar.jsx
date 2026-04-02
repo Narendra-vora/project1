@@ -28,15 +28,15 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:ml-6 md:flex md:items-center md:space-x-6 lg:space-x-10">
-            <Link to="/" className="font-semibold transition-all duration-300 text-white hover:text-green-500  hover:-translate-y-0.5">Home</Link>
-            <a href="#about" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">About </a>
-            <a href="#services" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Services</a>
+            <Link to="/" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Home</Link>
+            <Link to="/#about" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">About </Link>
+            <Link to="/#services" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Services</Link>
             <Link to="/book-parks" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Book Parks</Link>
             <Link to="/faq" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">FAQ</Link>
             <Link to="/contact" className="font-semibold transition-all duration-300 text-white hover:text-gir-gold hover:-translate-y-0.5">Contact Us</Link>
             <Link
               to="/safari"
-              className="inline-flex items-center justify-center rounded-xl bg-gir-gold px-5 py-2.5 font-semibold text-white  duration-300 hover:-translate-y-0.5 hover:opacity-90"
+              className="inline-flex items-center justify-center rounded-xl  bg-gir-green hover:bg-gir-green/90 px-5 py-2.5 font-semibold text-white  duration-300 hover:-translate-y-0.5 hover:opacity-90"
             >
               Book Now
             </Link>
@@ -59,11 +59,11 @@ const Navbar = () => {
         <div className="absolute w-full pb-4 shadow-xl md:hidden bg-white/95 backdrop-blur-md">
           <div className="flex flex-col items-center px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Home</Link>
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">About</a>
+            <Link to="/#about" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">About</Link>
             <Link to="/book-parks" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Book Parks</Link>
             <Link to="/faq" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">FAQ</Link>
             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Contact</Link>
-            <a href="#services" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Services</a>
+            <Link to="/#services" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 text-lg font-medium text-gray-800 rounded-md hover:text-gir-gold">Services</Link>
             <Link
               to="/safari"
               onClick={() => setIsMobileMenuOpen(false)}
